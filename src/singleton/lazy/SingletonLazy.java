@@ -5,15 +5,24 @@
  */
 package singleton.lazy;
 
-/**
- *
- * @author Marvin
- */
-public class SingletonLazy {
 
-    /**
-     * @param args the command line arguments
-     */
+public class SingletonLazy {
+    
+    private static SingletonLazy newSingletonInstance = null;
+    
+    private SingletonLazy(){}
+    
+    public static SingletonLazy newSingletonInstance(){
+        if(newSingletonInstance == null){
+            newSingletonInstance = new SingletonLazy();     
+        } 
+       return newSingletonInstance();
+    }
+    
+    
+    
+    
+    
     public static void main(String[] args) {
         // TODO code application logic here
     }
